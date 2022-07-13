@@ -63,8 +63,37 @@ switch(marca) {
 
     
 }
+// Se procede a preguntar al usuario si desea realizar una nueva consulta
 
 recotizar = prompt("¿Desea realizar una nueva consulta?").toLowerCase()
 
 }while(recotizar!="no")
+
+// Se agregan arrays de modelos de productos de la marca samsung, apple y lg (faltan actualizar mas productos) 
+
+
+//Se crea un objeto (agregado de su valor en dolares)
+class Producto {
+    constructor(marca, modelo, precioDeLista){
+        this.marca = marca.toUpperCase();
+        this.modelo = modelo;
+        this.precioDeLista = precioDeLista;
+    }  
+    enDolares() {
+        this.precioDeLista = this.precioDeLista / 250;
+    }
+}
+
+const productos = [];
+
+
+productos.push(new Producto ("Samsung", "GalaxyS22", 150000));
+productos.push(new Producto ("Apple", "Iphone 13", 250000));
+productos.push(new Producto ("LG", "Velvet 5G", 38900));
+
+for (const dolares of productos) dolares.enDolares()
+console.log(productos)
+
+
+
 
