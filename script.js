@@ -4,7 +4,7 @@ alert("Bienvenido a Todo Movil")
 
 // Variables constantes de calculo de intereses por x cantidad de meses
 
-let precioFinal = function (precio, cuota) {
+let precioFinal = function (precio, cuota)  {
     return precio / cuota
   };
 
@@ -74,26 +74,43 @@ recotizar = prompt("¿Desea realizar una nueva consulta?").toLowerCase()
 
 //Se crea un objeto (agregado de su valor en dolares)
 class Producto {
-    constructor(marca, modelo, precioDeLista){
-        this.marca = marca.toUpperCase();
-        this.modelo = modelo;
-        this.precioDeLista = precioDeLista;
+    constructor(marca, modelo, memoriaGb, precioDeLista){
+        this.marca = marca.toUpperCase()
+        this.modelo = modelo
+        this.memoria = memoriaGb
+        this.precioDeLista = precioDeLista
     }  
     enDolares() {
-        this.precioDeLista = this.precioDeLista / 250;
+        this.precioDeLista = this.precioDeLista / 250
     }
 }
 
-const productos = [];
+const productos = []
+let ingresarProductos = function(mar, mod, alm, pre) {
+    productos.push(new Producto (mar, mod, alm, pre)) 
+}
 
-
-productos.push(new Producto ("Samsung", "GalaxyS22", 150000));
-productos.push(new Producto ("Apple", "Iphone 13", 250000));
-productos.push(new Producto ("LG", "Velvet 5G", 38900));
+ingresarProductos("Samsung", "GalaxyS22", 128, 150000)
+ingresarProductos("Samsung", "GalaxyS21", 256, 140000)
+ingresarProductos("Samsung", "GalaxyS20", 512, 130000)
+ingresarProductos("Apple", "Iphone 13", 256, 250000)
+ingresarProductos("Apple", "Iphone 12", 128, 240000)
+ingresarProductos("Apple", "Iphone 11", 512, 260000)
+ingresarProductos("LG", "Velvet 5G", 512, 120000)
+ingresarProductos("LG", "Oled Z2", 128, 130000)
+ingresarProductos("LG", "Oled A2", 512, 150000)
+ingresarProductos("Huawei", "P50", 256, 100000)
+ingresarProductos("Huawei", "P40", 128, 90000)
+ingresarProductos("Huawei", "P30", 512, 80000)
+ingresarProductos("Motorola", "G Stylus", 512, 170000)
+ingresarProductos("Motorola", "Edge 30 PRO", 256, 160000)
+ingresarProductos("Motorola", "Edge 20 PRO", 128, 150000)
 
 for (const dolares of productos) dolares.enDolares()
 console.log(productos)
 
+// Se desea consultar precio final con impuestos incluidos
 
+for
 
 
